@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 203, 213 , 225;
+  --background-start-rgb: 8 , 47, 73;
+  --background-end-rgb: 0, 0, 20;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 203, 213 , 225;
+    --background-start-rgb: 8 , 47, 73;
+    --background-end-rgb: 0, 0, 20;
+  }
+}
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb)) 100vh
+    ); /* This makes the background fixed during scrolling */
+  background-color: rgb(var(--background-end-rgb)); /* Solid color beyond the gradient */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
